@@ -1,0 +1,58 @@
+.navbar-toggler {
+    color: darkblue;
+    background-color:plum;
+}
+
+.navbar-expand-lg {
+     background-color:plum;
+    color: aquamarine;
+    padding-bottom: 1%
+}
+.nav-link {
+    font-weight: bold;
+}
+.nav-item {
+    font-weight: bold;
+}
+.dropdown-menu {
+    background-color:plum;
+}
+.dropdown-divider {
+    color: aquamarine;
+    background-color:brown;
+}
+.img-responsive {
+        margin: 0 auto;
+        display: block;
+
+}
+
+
+
+.jumbotron {
+  background-image: url(../img/banner.PNG);
+  text-align: left;
+  padding: 3%;
+  margin: 5
+  background-position: center;
+  background-color: white !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: black 0.05em 0.05em 0.05em 
+}
+
+.jumbotron h2 {
+  font-size: 36px;
+    margin: 1;
+  font-weight: bold;
+}
+
+body {
+  padding-top: 40px;
+  font-family: 'Montserrat
+      ', sans-serif;
+    margin: 10;
+  background-color: #eeccff;
+  color: #242424;
+}
+
