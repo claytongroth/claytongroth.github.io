@@ -26,7 +26,34 @@
         display: block;
 
 }
+.h {
+    padding-bottom: 50px;
+}
+/* Carousel base class */
+.carousel {
+  min-height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  position: relative;
+    left: auto;
+    right: auto;
+}
 
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  min-height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 500px;
+}
+/* Carousel end */
 .list-group {
     color: darkblue;
     background-color: darkgrey;
@@ -84,6 +111,14 @@ top: 50%;
 .h5 {
     position: absolute
 }
+.carousel-caption {
+    color: black
+}
+.carousel {
+  width:100%;
+  height:50%;
+}
+
 .jumbotron {
   background-image: url(../img/ev.png);
   text-align: left;
@@ -101,7 +136,9 @@ top: 50%;
     margin: 1;
   font-weight: bold;
 }
-
+.h4 {
+    color: black
+}
 .body {
   padding-top: 40px;
   font-family: 'Montserrat', sans-serif;
