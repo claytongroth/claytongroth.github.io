@@ -24,7 +24,6 @@
 .img-responsive {
         margin: 0 auto;
         display: block;
-
 }
 .h {
     padding-bottom: 50px;
@@ -59,46 +58,26 @@
     background-color: darkgrey;
     background-color: #D3D3D3;
 }
-.container {
-      position: absolute;
-          top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
+
 .fa {
-  padding: 50px;
+  padding: 30px;
   font-size: 50px;
   width: auto;
-  text-align: center;
-  text-decoration: none;
-  margin: 2px 2px;
-    border-radius: 50%;
+ border-radius: 50%;
 }
 .fa:hover {
     opacity: 0.7;
 }
-.fa-twitter {
 
-     position: absolute;
-          top: 50%;
-  left:30%;
-  transform: translate(-50%,-50%);
+.fa-twitter {
     background: #55ACEE;
     color: white;
 }
 .fa-linkedin {
-     position: absolute;
-          top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
   background: #007bb5;
   color: white;
 }
 .fa-instagram {
-position: absolute;
-top: 50%;
-  left:70%;
-  transform: translate(-50%,-50%);
   background: #125688;
   color: white;
 }
