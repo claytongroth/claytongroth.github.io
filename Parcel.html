@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="maps, cartography"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container-fluid">
+				<h2>Clayton Groth | Cartographer / Adventurer</h2>
+				<p>“The secret of happiness is not doing what we like but in liking what we do.” ― J.M. Coetzee.</p>
+			</div>
+		</div>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="index.html">Clayton Groth</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Maps
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="InfoG.html">USA Bouldering</a>
+            <a class="dropdown-item" href="SeaSand.html">Sea to Sands</a>
+            <a class="dropdown-item" href="Adv.html">Adventures</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="Other.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Other Works
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="USA.html">USA Infographic</a>
+              <a class="dropdown-item" href="Parcel.html">Sample GIS Program</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About Me
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="About.html">Bio</a>
+            <a class="dropdown-item" href="Resume.html">Resume/CV</a>
+            <a class="dropdown-item" href="ProEX.html">Professional Experience</a>
+               <a class="dropdown-item" href="VolEX.html">Other Experience</a>
+            <a class="dropdown-item" href="sm.html">Social Media</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="Contact.html">Contact Me</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<body>
+    <div class = "container-fluid">
+    <h1 class="text-center"> Sample GIS Program</h1>
+        <h2 class="text-center">____________________________________________
+        </h2>
+        
+    
+         <h3 class="text-center">Power Line Installation</h3>
+        <div class="row">
+          <div class="col-md-12">
+              <h5>The Task:</h5>
+                <p>Given a shapefile of a land parcels in an metropolitan area and a shapefile of the proposed location of a powerline, compute the following:</p>
+                    <ul>
+                        <li>Calculates the length of the proposed power line</li>
+                        <li>Prints out the attributes (metadata) of the power line shapefile</li>
+                        <li>Prints the street address and area of every land parcel that crosses the power line's path</li>
+                        <li>Constructs a shapefile consisting of every parcel entirely within a 250 foot buffer of the proposed power line </li>
+                    </ul>
+              
+        <img style='width:491px;height:358px; margin-right:10px;' src="img/parcel.PNG" />
+    <p></p>
+               <div class = "container-fluid">
+                   <div class = "pre-scrollable">
+              <pre><code>
+
+from osgeo import ogr
+import osgeo.ogr
+import math
+import sys
+import os 
+
+OutputFileName = "buffer.shp"
+OutputFileName2 = "containedparcels.shp"
+
+#the following lines call the open file parcel and use OGR utilities to get the layer from the shpfile and the layer definitions.
+plines = r"C:\Users\cl\Power\Powerline.shp"
+data = ogr.Open(powerlines)
+datalayer = data.GetLayer(0)
+layerDefinition = datalayer.GetLayerDefn()
+
+
+#the following lines call the open file parcel and use ogr utilities to get the layer from the shpfile and the layer definitions.
+parcel = r"C:\Users\cl\Power\Parcels.shp"
+parceldata = ogr.Open(parcel)
+datalayer1 = parceldata.GetLayer(0)
+layer1Definition = datalayer1.GetLayerDefn()
+
+# these lines test whether or not the files in question exist.
+if plines is None:
+   print 'Failed to open file'
+   sys.exit(1)
+if parcel is None:
+   print 'Failed to open file'
+   sys.exit(1)
+
+#these lines get basic info about the layer
+layerName   = datalayer1.GetName()
+layerTypeInt = datalayer1.GetGeomType()
+layerExtent = datalayer1.GetExtent()
+layerDefn = datalayer1.GetLayerDefn()
+
+# these lines convert integer layertype to text equivalent
+layerTypeStr = ogr.GeometryTypeToName(layerTypeInt)
+ 
+# these lines print the name, type and extent of layer
+print 'Layer', layerName,'is a', layerTypeStr,'layer with bounding box:'
+print layerExtent,'\n'
+
+#print the attribute names and attribute data types
+featureCount = datalayer1.GetFeatureCount()
+print 'There are',featureCount,'features'
+
+# The following lines take the linestring found from ogrinfo of the powerline shapefile and create a geometry of it bound to the variables line and geom
+wkt = "LINESTRING (6407861 1830710,6411445 1826987,6413062 1826775,6416616 1829809)"
+geom = ogr.CreateGeometryFromWkt(wkt)
+line = geom
+
+#set the buffer width for the powerline
+bufferWidth = 250
+
+# these lines get the driver for creating the shapefile and opening the power line shpfile with this driver.
+driver  = ogr.GetDriverByName('ESRI Shapefile')
+inputDS = driver.Open(plines)
+
+# the following lines make sure the file doesnt exist, if it does it will be erased...
+if os.path.exists(OutputFileName):
+   os.remove(OutputFileName)
+# The following block 
+try:
+   outputDS = driver.CreateDataSource(OutputFileName)
+except:
+   print 'Could not create output file',OutputFileName
+   sys.exit(1)
+
+# These lines create a new layer with the ESRI driver to add to the new shapefile later. They define this new layer as a polygon layer.
+newLayer = outputDS.CreateLayer('Buff', geom_type=ogr.wkbPolygon)
+newLayerDef = newLayer.GetLayerDefn()
+
+# The old powerline and new powerline's geometry are set based on the bufferwidth variable.
+oldpowerline = datalayer.GetFeature(0)
+geometry = oldpowerline.GetGeometryRef()
+buffer = geometry.Buffer(bufferWidth)
+
+#The following lines set a feature ID, create a feature and set the ID for the new buffer feature. This new feature is added to a new layer for the new shapefile....
+featureID   = 0
+newFeature = ogr.Feature(newLayerDef) #create feature
+newFeature.SetGeometry(buffer)        #add geometry
+newFeature.SetFID(featureID)          #set id
+newLayer.CreateFeature(newFeature)    #add feature to layer
+
+# the new buffered line is defined for later use.
+bline = newFeature.GetGeometryRef()
+
+
+#############################
+# the following lines make sure the file doesnt exist, if it does it will be erased...
+if os.path.exists(OutputFileName2):
+   os.remove(OutputFileName2)
+# This block of code tests for whether the output file can be created...
+try:
+   outputDS2 = driver.CreateDataSource(OutputFileName2)
+except:
+   print 'Could not create output file',OutputFileName2
+   sys.exit(1)
+
+# the following lines create a new layer and its definitions for the parcels within the 250ft buffer using ogr utilities.
+newLayer2 = outputDS2.CreateLayer('Cont', geom_type=ogr.wkbPolygon)
+newLayerDef2 = newLayer2.GetLayerDefn()
+# it will be the only feature
+featureID2 = 0
+#############################
+
+
+
+
+# Defining lists and loops for checking data
+fields = []
+fieldtypes = []
+featurepolygons = []
+addys = []
+areas = []
+
+# the following for loop goes into the features in the parcels shapefile and gets the fields from the shpfiule for each attribute eg. address, area... etc...
+#these fields are appended to the fields list for later use.
+for i in range(1, datalayer1.GetFeature(0).GetFieldCount()):
+    field = datalayer1.GetFeature(0).GetDefnRef().GetFieldDefn(i).GetName()
+    fields.append(field)
+
+# This for loop appends the field types to a field types list that was used to identify the ogr types of each attribute field. (from the parcels shpfile....)
+for i in range(layerDefn.GetFieldCount()):
+   fieldName = layerDefn.GetFieldDefn(i).GetName()
+   fieldTypeCode = layerDefn.GetFieldDefn(i).GetType()
+   fieldType = layerDefn.GetFieldDefn(i).GetFieldTypeName(fieldTypeCode)
+   fieldtypes.append(fieldType)
+# The following for loop gets the addresses from each item in the parcel shpfile and appends the address to a list for later use.
+for i in range(0, featureCount):
+   feature = datalayer1.GetFeature(i)
+   addy = feature.GetField("SITUSADDR")
+   addys.append(addy)
+   feature = None
+# The following for loop itereates through the feature of the parcel shpfile and appends the areas to a list for later use.
+for i in range(0, featureCount):
+   feature = datalayer1.GetFeature(i)
+   area = feature.GetField("AREA")
+   areas.append(area)
+   feature = None
+#The following for loop iterates through the features of the parcel shpfile and gets the feature's geometries and sets them into the polygon list.
+#The embeded if statements use the queries in OGR functionality to test if an idex of the adress list's polygon crosses the powerline geometry from the WKT line. It then prints the address and area of the parcel.
+#The second embeded if statement uses the queries in OGR functionality to test if the newly created feature (a buffer of 250 around the powerline) contains an index of the parcel list.
+#If the feature is contained in this new feature buffer it is added to the newly created layer.
+# finally the feature is closed for the list.
+for i in range(0, featureCount):
+   feature = datalayer1.GetFeature(i)
+   polyg = feature.GetGeometryRef()
+   featurepolygons.append(polyg)
+   if line.Crosses(featurepolygons[i]):
+      print "The Powerline crosses the parcel at address:", addys[i], "This parcel has area:", areas[i]
+   if bline.Contains(featurepolygons[i]):
+      print "The Powerline Buffer of 250ft contains the parcel at address:", addys[i], "This parcel has area:", areas[i]
+      newFeature2 = ogr.Feature(newLayerDef2) #create feature
+      newFeature2.SetGeometry(featurepolygons[i])        #add geometry
+      newFeature2.SetFID(featureID2)          #set id
+      newLayer2.CreateFeature(newFeature2)    #add feature to layer
+      print "created feature" 
+   feature = None
+
+# Print the list of attribute fields and field types
+print "The attribute values are", fields
+print "The attribute types are", fieldtypes
+
+#assembling points
+pt1 = geom.GetPoint(0)
+pt2 = geom.GetPoint(1)
+pt3 = geom.GetPoint(2)
+pt4 = geom.GetPoint(3)
+
+
+lat1 = pt1[0]
+lat2 = pt2[0]
+lon1 = pt1[1]
+lon2 = pt2[1]
+
+lat3 = pt3[0]
+lat4 = pt4[0]
+lon3 = pt3[1]
+lon4 = pt4[1]
+
+#distance between points 1 & 2
+d1 =(((lat1-lat2)**2)+((lon1-lon2)**2))** 0.5
+#Distance between points 2 & 3
+d2 =(((lat2-lat3)**2)+((lon2-lon3)**2))** 0.5
+#Distance between points 3 & 4
+d3 =(((lat3-lat4)**2)+((lon3-lon4)**2))** 0.5
+
+print d1+d2+d3
+
+                </code></pre>
+              </div>
+                </div>
+        </div>
+        </div>
+        </div>
+</body>

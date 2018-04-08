@@ -5,11 +5,14 @@
   .nav-item {
     width:100%;
     float:none;
-    font-size:      1.5em;
+    font-size: 1.5em;
+      
   }
+.nav-link {
+    font-weight: bold;
+   font-size: 1em; 
+}    
 }
-
-
 
 
 .navbar-toggler {
@@ -123,3 +126,6 @@
   color: #242424;
 }
 body {background-color: lightgrey;}
+.pre-scrollable {
+    background-color: lightgreen;
+}
