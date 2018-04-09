@@ -5,21 +5,24 @@
   .nav-item {
     width:100%;
     float:none;
-    font-size: 1.5em;
+    font-size: 2em;
       
   }
 .nav-link {
     font-weight: bold;
-   font-size: 1em; 
+   font-size: 2em; 
 }    
+body{font-size: 1.5em;}
 }
 
-
+/* navbar */
 .navbar-toggler {
     color: darkblue;
     background-color:darkgrey;
 }
-
+.navbar-brand{
+    font-size: 1.3em;
+}
 .navbar-expand-lg {
      background-color:lightgray;
     color: aquamarine;
@@ -27,21 +30,41 @@
 }
 .nav-link {
     font-weight: bold;
+    font-size: 1em;
 }
 .nav-item {
     font-weight: bold;
+    font-size-adjust: auto;
+}
+.dropdown-item {
+    font-size: 1em;
 }
 .dropdown-menu {
+    font-size: 1em;
     background-color:lightgray;
 }
 .dropdown-divider {
     color: aquamarine;
     background-color:brown;
 }
+/* navbar */
 .img-responsive {
         margin: 0 auto;
         display: block;
 }
+.body {
+  padding-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+    margin: 20;
+  color: #242424;
+}
+body {
+    margin: 20;
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightgrey;
+    font-size: 1.5em;
+}
+
 .h {
     padding-bottom: 50px;
 }
@@ -119,13 +142,8 @@
 .h4 {
     color: black
 }
-.body {
-  padding-top: 40px;
-  font-family: 'Montserrat', sans-serif;
-    margin: 20;
-  color: #242424;
-}
-body {background-color: lightgrey;}
+
+
 .pre-scrollable {
     background-color: lightgreen;
 }
