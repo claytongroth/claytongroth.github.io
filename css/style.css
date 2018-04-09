@@ -5,15 +5,19 @@
   .nav-item {
     width:100%;
     float:none;
-    font-size: 2em;
+    font-size: 1em;
       
   }
+.dropdown-item {
+    font-size: 1em;
+}
 .nav-link {
     font-weight: bold;
-   font-size: 2em; 
-}    
-body{font-size: 1.5em;}
-}
+   font-size: 1.5em; 
+    }
+body{font-size: 1em;}
+    }    
+/* Mobile Stuff ^ */
 
 /* navbar */
 .navbar-toggler {
@@ -21,7 +25,8 @@ body{font-size: 1.5em;}
     background-color:darkgrey;
 }
 .navbar-brand{
-    font-size: 1.3em;
+    font-size: 1.2em;
+    font-style: bold;
 }
 .navbar-expand-lg {
      background-color:lightgray;
@@ -34,7 +39,7 @@ body{font-size: 1.5em;}
 }
 .nav-item {
     font-weight: bold;
-    font-size-adjust: auto;
+    font-size:1em;
 }
 .dropdown-item {
     font-size: 1em;
@@ -47,7 +52,7 @@ body{font-size: 1.5em;}
     color: aquamarine;
     background-color:brown;
 }
-/* navbar */
+/* navbar end */
 .img-responsive {
         margin: 0 auto;
         display: block;
@@ -62,7 +67,7 @@ body {
     margin: 20;
     font-family: 'Montserrat', sans-serif;
     background-color: lightgrey;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .h {
@@ -138,6 +143,9 @@ body {
   font-size: 36px;
     margin: 1;
   font-weight: bold;
+}
+.jumbotron p {
+    font-size: 20px;
 }
 .h4 {
     color: black
