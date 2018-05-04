@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+    background-color:#D8D8C7;
 }
 
 
@@ -20,6 +21,7 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
+margin-top: 25px;
 
 }
 
@@ -34,10 +36,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-a {
-  text-decoration: none;
-  color: #2dc4b2;
-}
+
 @font-face {
 font-family: OldNewspaperTypes;
 font-family: PortmanteauRegular;
@@ -50,6 +49,10 @@ font-family: OldNewspaperTypes;
 src: 
 url("css/fonts/OldNewspaperTypes.ttf");
 } 
+ a {
+
+color: black;
+}    
 #console {
   position: absolute;
   width: 300px;
@@ -59,7 +62,8 @@ url("css/fonts/OldNewspaperTypes.ttf");
 background-color:#D8D8C7;
 border-style: double;
     font-family: PortmanteauRegular;
-}   
+} 
+
 legend {
     background-color: #fff;
     border-radius: 3px;
@@ -146,18 +150,33 @@ legend {
       font-size: 14px;
      margin-top: 10px;
   }
-</style>     
-      
+     button {
+         background-color:#D8D8C7;
+         font-family: 'PortmanteauRegular';
+     }
+          button a {
+         background-color:#D8D8C7;
+         font-family: 'PortmanteauRegular';
+     }
+.group {
+    display: table;
+}
+</style>      
       
   </head>
+
+
+     <div id='map'></div> 
     
-
-  
-    <body>
-        
-     <div id='map'></div>  
-
-      <div id='console'>
+    <div class='session' id='butt'>
+        <div class = "group">
+        <button onclick="myFunction()">Hide/Unhide Legend</button> 
+           <button > <a accesskey="h" id="home" href="CWINFO.html">Map Info</a>
+               <button > <a accesskey="h" id="home" href="index.html">Home</a>
+         </button> 
+    </div>
+        </div>
+    <div id='console'>
   <h1>Major Civil War Battles (1861-1865)</h1>
   <p></p>
  
@@ -195,9 +214,18 @@ legend {
           
     
           </div> 
+</div>
 
-      </div>
-     
+ <script>
+function myFunction() {
+    var x = document.getElementById("console");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
     
 
