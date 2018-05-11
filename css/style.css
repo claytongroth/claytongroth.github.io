@@ -29,9 +29,11 @@ body{font-size: 1em;}
     font-style: bold;
 }
 .navbar-expand-lg {
-     background-color:lightgray;
-    color: aquamarine;
-    padding-bottom: 1%
+    background-color: lightgray;
+    color: #373D34;
+    padding-bottom: 1%;
+    border: 1px solid;
+    border-radius: 5px;
 }
 .nav-link {
     font-weight: bold;
@@ -43,10 +45,14 @@ body{font-size: 1em;}
 }
 .dropdown-item {
     font-size: 1em;
+            background-color: lightgray;
+
 }
 .dropdown-menu {
     font-size: 1em;
-    background-color:lightgray;
+        background-color: lightgray;
+    background-image: url(/img/topography.svg);
+    background-blend-mode: soft-light;
 }
 .dropdown-divider {
     color: aquamarine;
@@ -63,10 +69,13 @@ body{font-size: 1em;}
     margin: 20;
   color: #242424;
 }
+
 body {
     margin: 20;
     font-family: 'Montserrat', sans-serif;
-    background-color: lightgrey;
+    background-color: lightgray;
+    background-image: url(/img/topography.svg);
+    background-blend-mode: soft-light;
     font-size: 1em;
 }
 
@@ -100,28 +109,6 @@ body {
     background-color: #D3D3D3;
 }
 
-.fa {
-  padding: 30px;
-  font-size: 50px;
-  width: auto;
- border-radius: 50%;
-}
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
 
 .h5 {
     position: absolute
@@ -154,4 +141,69 @@ body {
 
 .pre-scrollable {
     background-color: lightgreen;
+}
+/* footer */
+.footer {
+    
+  background: #373D34;
+  padding: 10px 0;
+}
+.footer a {
+  color: #9E9E9E;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #818181;
+  transition: all .5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid #818181;
+}
+.footer a:hover {
+  color: white;
+}
+/* footer end*/
+
+.headermessage {
+  margin: 19px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.image-block {
+       border-radius:10px;
+    border: 3px solid #D3D3D3 ;
+    background-color: black;
+    padding: 0px;    
+    margin: 0px;
+    height:250px;
+    text-align: center;
+    vertical-align: bottom;
+}
+.holder {
+    width: 100%;
+    height: 100%;
+    font-family: Garamond;
+    font-weight: normal;
+    font-size: 19px;
+    top: 50%;
+    background-color: rgba(3,3,3,0.0);
+    color: rgba(6,6,6,0.0);
+}
+.holder:hover {
+    background-color: rgba(3,3,3,0.5);    
+    color: white; 
+
+}
+image-block > p {
+    font-size: 15px;
+}
+.crap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.crap > img {
+       border-radius:100px;
 }

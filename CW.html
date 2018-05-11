@@ -165,16 +165,17 @@ legend {
       
   </head>
 
-
+    <body>
+        
      <div id='map'></div> 
     
     <div class='session' id='butt'>
         <div class = "group">
         <button onclick="myFunction()">Hide/Unhide Legend</button> 
-           <button > <a accesskey="h" id="home" href="CWINFO.html">Map Info</a>
+           <button > <a accesskey="h" id="home" href="CWINFO.html">Map Info</a> </button> 
                <button > <a accesskey="h" id="home" href="index.html">Home</a>
          </button> 
-    </div>
+        </div>
         </div>
     <div id='console'>
   <h1>Major Civil War Battles (1861-1865)</h1>
@@ -187,6 +188,8 @@ legend {
  
 <div id="legend" class="legend">
     <h4>Casualties (51,000 - ~1)</h4>
+    <hr>
+    <p><small>click for details</small></p>
   <div><span style="width:40px;height:40px;margin: 0 4; background:#3D4260;"></span><span style="width:30px;height:30px;margin: 0 4; background:#3D4260;"></span><span style="width:20px;height:20px;margin: 0 4; background:#3D4260;"></span><span style="width:10px;height:10px;margin: 0 4; background:#3D4260;"></span>Union Victory</div>
     
   <div><span style="width:40px;height:40px;margin: 0 4; background:#87282C;"></span><span style="width:30px;height:30px;margin: 0 4; background:#87282C;"></span><span style="width:20px;height:20px;margin: 0 4; background:#87282C;"></span><span style="width:10px;height:10px;margin: 0 4; background:#87282C;"></span>Confdt Victory</div>
@@ -197,6 +200,7 @@ legend {
     
     <div class = legend2>
     <h4>State Boundaries</h4>
+        <hr>
                 <div><span style="width:30px;height:30px;margin: 0 2; background:#1805eb"> 
         </span>United States (Union)
     </div>
@@ -208,6 +212,7 @@ legend {
     </div>
         <div><span style="width:30px;height:30px;margin: 0 2; background:#f7f7de"> 
         </span>Territories
+            <hr>
     </div>
            <p>*The administrative boundaries shown are those of the continental united states in the early spring of 1861. These boundaries changed rapidly and many times over the course of the war. </p>
     </div>
@@ -324,6 +329,14 @@ map.on('mousemove', function(e) {
   map.getCanvas().style.cursor = features.length ?  'pointer' : '';
 });
  
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // disable map rotation using right click + drag
+map.dragRotate.disable();
+
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();
+    
 </script>
       </body>
 </html>

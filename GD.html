@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='utf-8' />
+  <title>Grandad's Bluff Climbing</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+ <style>
+  #map {
+    position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+margin-top: 35px;
+
+}   
+     
+         #map canvas {
+        cursor: crosshair;
+    }
+     
+     .mapboxgl-popup {
+  max-width: 300px;
+  font: 16px/16px Courier New;
+         color: white;
+    background-color: #0000;
+}
+     .mapboxgl-popup-content {
+       background-image: url("/img/gback.png");
+     }
+.popup {
+    background-color: #aaa;
+   
+     } 
+     .popup h5 {
+    font-size: 14;
+   
+     } 
+#console {
+  position: absolute;
+  width: 300px;
+  margin: 10px;
+  padding: 10px 20px;
+    margin-top: 35px;
+    font-size: 12px;
+    color: white;
+background-color:#373D34;
+border-style: double;
+    font-family: Courier New;
+} 
+
+legend {
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0.5, 0.5, 0.5, 0.10);
+    padding: 10px;
+    padding-bottom: 15px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    background-color:#6E6960;
+    border-style: double;
+  }
+.legend h4 {
+    margin: 0 0 10px;
+      font-size: 24px;
+  }
+
+.legend p {
+         font-size: 16px;
+     }
+   
+.legend h5 {
+    margin: 0 0 10px;
+          position:absolute;
+  }
+.legend div {
+    position:relative;
+    background-color:#373D34;
+    font-size: 18px;
+  }
+
+.legend div span {
+    border-radius: 10%;
+    display: inline-block;
+    margin-right: 4px;
+    opacity:1;
+    background-color:#373D34;
+      vertical-align:middle;
+      margin-bottom: 2px;
+  }
+</style>    
+     
+     
+      
+<body>    
+    <div id='map'></div> 
+<div id='console'>
+ <div id="legend" class="legend">
+    <h4>Grandad's Bluff Climbing</h4>
+    <hr>
+    <p><small>click for details</small></p>
+  <div><span style="width:50px;height:10px;margin: 0 4; background:#c10bfe;"></span>Crag (Climbing Walls)</div>
+    
+  <div><span style="width:50px;height:10px;margin: 0 4; background:#0edd8d;"></span>Nature Trails</div>
+        
+    <div><span style="width:50px;height:10px;margin: 0 2; background:#690c1c"> 
+        </span>Climber's Trails
+    </div>
+    
+    <div class = legend2>
+    </div>
+          
+    
+</div> 
+</div>   
+    
+    
+       
+
+    <div class='session' id='butt'>
+        <div class = "group">
+        <button onclick="myFunction()">Hide/Unhide Legend</button> 
+               <button > <a accesskey="h" id="home" href="index.html">Home</a>
+         </button> 
+    </div>
+</div>
+      
+
+<script>
+function myFunction() {
+    var x = document.getElementById("console");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+    
+
+<script>  
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2dyb3RoIiwiYSI6ImNqZ2w4bWY5dTFueG0zM2w0dTNkazI1aWEifQ.55SWFVBYzs08EqJHAa3AsQ';
+
+var map = new mapboxgl.Map({
+  container: 'map', // container element id
+    //mapbox://styles/mapbox/light-v9
+  style: 'mapbox://styles/cgroth/cjgsomst7000e2rl7vcm8862p',
+    center: [-91.21, 43.811],
+    minZoom: 17
+});
+    
+ map.on('style.load', function() {
+    map.addLayer({
+      id: 'bluff',
+      type: 'line',
+      source: {
+        type: 'geojson',
+        data: './GDF.geojson' // replace this with the url of your own geojson
+      },
+         "paint": {
+            "line-color": "#fff",
+            "line-width": 8,
+            "line-opacity": .05
+
+        }
+ 
+         }); 
+     
+map.on('click', 'bluff', function (e) {
+
+    var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.name; 
+        var description2 = e.features[0].properties.des;
+    
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+            new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML("<h3>" + description + "</h3>" + "<hr>" + "<p>" + description2 + "</p>")
+            .addTo(map);
+    });
+     
+      map.on('mouseenter', 'bluff', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+     
+      map.on('mouseleave', 'bluff', function () {
+        map.getCanvas().style.cursor = '';
+    });
+        
+});
+  
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // disable map rotation using right click + drag
+map.dragRotate.disable();
+
+// disable map rotation using touch rotation gesture
+map.touchZoomRotate.disableRotation();       
+        
+    </script>
+      </body>
+      
