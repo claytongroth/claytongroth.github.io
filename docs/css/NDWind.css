@@ -1,0 +1,196 @@
+ .info {
+    padding: 6px 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20/22x;
+    background-color: hsl(138, 54%, 42%, .3);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: azure;
+    
+}
+.info h4 {
+    margin: 0 0 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: azure;
+} 
+@font-face {
+font-family: storm;
+src: 
+url("css/fonts/storm.ttf");
+} 
+#mapid { 
+    height: 550px;
+    border: 2px solid #006d2c;
+    float: right;
+    margin: 5px;
+}
+a {
+    color: #black;
+}
+.leaflet-canvas-layer {
+    opacity: 0.55;
+}   
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-family: storm;
+}
+h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: azure;
+    font-family: storm;
+}
+#header {
+   padding:10px;
+}
+.body {
+  padding-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  color: #242424;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(138, 54%, 42%, .3);
+    background-image: url(/img/topography.svg);
+    background-blend-mode: soft-light;
+    font-size: 1em;
+    padding-bottom:60px;
+    height: 100%;
+} 
+
+.legend {
+text-align: left;
+line-height: 16px;
+font-family: 'Montserrat', sans-serif;
+color: azure;
+background-color: hsl(138, 54%, 42%, .3);  
+}
+.legend i {
+width: 18px;
+height: 18px;
+font-family: 'Montserrat', sans-serif;
+float: left;
+margin-right: 8px;
+opacity: 0.7;
+}
+.legend .circle {
+border-radius: 50%;
+width: 14px;
+height: 14px;
+}
+.leaflet-popup-content-wrapper {
+    padding:1px;
+    text-align:left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20/22x;
+    background:  hsl(138, 54%, 42%, .8);
+    color: azure;
+
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.leaflet-popup-tip-container {
+}
+
+.ui-slider {
+    background:  hsl(138, 54%, 42%, .5);
+
+}   
+.leaflet-control-layers-toggle {
+    border-radius: 0;
+	background-color: hsl(138, 54%, 42%, .5);
+    background-size: 30px 30px;
+    border: 2px;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(138, 54%, 42%, .5);
+    background-size: 30px 30px;
+}
+.leaflet-control-layers-expanded {
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(138, 54%, 42%, .4);
+}
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-in { 
+    background-color: hsl(138, 54%, 42%, .5); 
+    color: azure;
+}
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-out { 
+    background-color: hsl(138, 54%, 42%, .5); 
+    color: azure;
+}
+.col-sm-4 {
+    background-color: hsl(138, 54%, 42%, .1); 
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+
+}
+
+.container-fluid {
+    background-color:  hsl(138, 54%, 42%, .5);   
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 1%;
+}
+.container-fluid2 {
+    background-color:  hsl(138, 54%, 42%, .8);   
+    width: 23%;
+    height: 100%;
+    margin-left: 10px;
+    border-radius: 1%;
+
+}
+.container-fluid2 .row {
+    margin-left: 5px;
+    position: relative;
+
+}
+.container-fluid2 .col-sm-4 {
+    background-color:  #0000; 
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+.icon {
+    background: url('/img/layers.svg');
+    background-position: center center;
+    display: inline-block;
+    background-color: hsl(138, 54%, 42%, .5);
+    width: 27.5px; 
+    height: 27.5px;
+    border-radius: 50%;
+}
+.slidericon {
+    background: url('/img/slider.PNG'); 
+    background-size:cover;
+    display: inline-block;
+    border-radius: 10%;
+    width: 147px; 
+    height: 29.5px;
+}
+.turbineicon {
+    background: url('/img/WTurbine.png'); 
+    background-size:cover;
+    display: inline-block;
+    border-radius: 10%;
+    width: 45px; 
+    height: 56.12px;
+}
+#containera {
+   min-height:100%;
+   position:relative;
+}

@@ -1,0 +1,209 @@
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .nav {
+    width:100%;
+  }
+  .nav-item {
+    width:100%;
+    float:none;
+    font-size: 1em;
+      
+  }
+.dropdown-item {
+    font-size: 1em;
+}
+.nav-link {
+    font-weight: bold;
+   font-size: 1.5em; 
+    }
+body{font-size: 1em;}
+    }    
+/* Mobile Stuff ^ */
+
+/* navbar */
+.navbar-toggler {
+    color: darkblue;
+    background-color:darkgrey;
+}
+.navbar-brand{
+    font-size: 1.2em;
+    font-style: bold;
+}
+.navbar-expand-lg {
+    background-color: lightgray;
+    color: #373D34;
+    padding-bottom: 1%;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.nav-link {
+    font-weight: bold;
+    font-size: 1em;
+}
+.nav-item {
+    font-weight: bold;
+    font-size:1em;
+}
+.dropdown-item {
+    font-size: 1em;
+            background-color: lightgray;
+
+}
+.dropdown-menu {
+    font-size: 1em;
+        background-color: lightgray;
+    background-image: url(/img/topography.svg);
+    background-blend-mode: soft-light;
+}
+.dropdown-divider {
+    color: aquamarine;
+    background-color:brown;
+}
+/* navbar end */
+.img-responsive {
+        margin: 0 auto;
+        display: block;
+}
+.body {
+  padding-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+    margin: 20;
+  color: #242424;
+}
+
+body {
+    margin: 20;
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightgray;
+    background-image: url(/img/topography.svg);
+    background-blend-mode: soft-light;
+    font-size: 1em;
+}
+
+.h {
+    padding-bottom: 50px;
+}
+/* Caro */
+
+.carousel-caption {
+  position: relative;
+    left: auto;
+    right: auto;
+}
+.carousel-caption {
+    color: black
+}
+.carousel {
+  width:100%; 
+  height:20%;
+}
+.carousel-inner img {
+  margin: auto;
+    max-height: 580px;
+    max-width: 500px;
+}
+
+/* Carousel end */
+.list-group {
+    color: darkblue;
+    background-color: darkgrey;
+    background-color: #D3D3D3;
+}
+
+
+.h5 {
+    position: absolute
+}
+
+.jumbotron {
+  background-image: url(../img/ev.png);
+  text-align: left;
+  padding-left: 1%;
+    padding-bottom: %;
+  margin: 10;
+  background-position: top;
+  background-color: lightgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: black 0.05em 0.05em 0.05em 
+}
+.jumbotron h2 {
+  font-size: 36px;
+    margin: 1;
+  font-weight: bold;
+}
+.jumbotron p {
+    font-size: 20px;
+}
+.h4 {
+    color: black
+}
+
+
+.pre-scrollable {
+    background-color: lightgreen;
+}
+/* footer */
+.footer {
+    
+  background: #373D34;
+  padding: 10px 0;
+}
+.footer a {
+  color: #9E9E9E;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #818181;
+  transition: all .5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid #818181;
+}
+.footer a:hover {
+  color: white;
+}
+/* footer end*/
+
+.headermessage {
+  margin: 19px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.image-block {
+       border-radius:10px;
+    border: 3px solid #D3D3D3 ;
+    background-color: black;
+    padding: 0px;    
+    margin: 0px;
+    height:250px;
+    text-align: center;
+    vertical-align: bottom;
+}
+.holder {
+    width: 100%;
+    height: 100%;
+    font-family: Georgia;
+    font-weight: normal;
+    font-size: 19px;
+    top: 50%;
+    background-color: rgba(3,3,3,0.0);
+    color: rgba(6,6,6,0.0);
+}
+.holder:hover {
+    background-color: rgba(3,3,3,0.5);    
+    color: white; 
+
+}
+image-block > p {
+    font-size: 15px;
+}
+.crap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.crap > img {
+       border-radius:100px;
+}

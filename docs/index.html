@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+     crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+  crossorigin="">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<! Leaflet and Leaflet packages>
+<script src="../scripts/leaflet-src.js"></script>
+<script type="text/javascript" src="../dist/leaflet.ajax.js"></script>
+<script src="../scripts/spin.js"></script>
+<script src="../scripts/leaflet.spin.js"></script>
+<script type="text/javascript" src="ND.js"></script>
+<script src="../scripts/SliderControl.js"></script>
+    
+<link rel="stylesheet" href="/dist/wind-js-leaflet.css">
+<script src="/dist/wind-js-leaflet.js"></script>   
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
+
+    
+<! JQuery>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<!Velocity   >
+<link rel="stylesheet" href="../dist/leaflet-velocity.css" />
+<script src="../dist/leaflet-velocity.js"></script>
+
+<!Page CSS   >   
+<link rel="stylesheet" href="../css/NDWind.css" />
+
+    
+
+</head>
+    
+<title>North Dakota Wind Turbines</title>
+    <meta charset="utf-8"/>
+    
+<style>
+
+</style>
+
+<div class = "header"><h1>North Dakota Wind Resource Development (2004 - 2018)</h1></div>
+<body> 
+
+<div class = "row" style ="height: 550px; width:1500px;!important;">
+    <div id="mapid" style = "width:75%;"></div>
+    <div class="container-fluid2">
+          <h2><div class="turbineicon"></div>  Map Capabilities & Info</h2>
+        <hr style= "width:100%; display:inline-block;height:10px; background-color: hsl(138, 54%, 42%, 1);border: 0 none;">
+          <div class="row">
+            <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 Activate wind layers! <div class="icon"></div> : live global wind feed and Wind Power Classification layers (50m). Best viewed with Dark Canvas baselayer. </div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 Adjust the slider <div class="slidericon"></div> to watch ND's wind energy develop over the years!  </div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 Hover over a turbine <div class="turbineicon" style = "width: 20px !important; height: 20px !important;"></div> to see its action date and nearest city. Click to zoom in on it.</div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 Turbines range from 25ft  to 500ft!
+                  <br>
+                        <div style = "text-align:center;">
+                  <div class="turbineicon" style =" width: 20px !important; height: 20px !important;"></div>...
+                  <div class="turbineicon" style =" width: 30px !important; height: 30px !important;"></div>...
+                  <div class="turbineicon" style =" width: 40px !important; height: 40px !important;"></div>...
+                  <div class="turbineicon" style =" width: 60px !important; height: 60px !important;"></div>...
+                        </div>
+              </div>
+                <hr style= "width:50%; border: 0 none;">
+
+            </div>
+    </div>
+</div>
+    
+    
+    <div class="container-fluid" style = "width:1500px;!important;" >
+        <hr style= "width:70%; display:inline-block;height:10px; background-color: hsl(138, 54%, 42%, 1);border: 0 none;">
+          <h2><div class="turbineicon"></div>  North Dakota Wind Resource Facts<div class="turbineicon"></div></h2>
+        <hr style= "width:70%; display:inline-block;height:10px; background-color: hsl(138, 54%, 42%, 1);border: 0 none;">
+          <div class="row">
+            <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 As of 2017, North Dakota Leads the U.S. with an installed wind capacity of <b>2,996 MW</b></div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 As of 2017, North Dakota has <b>1611 wind turbines</b>, being 11th in the U.S. for number of turbines.</div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 During 2017, wind energy provided <b>26.8% of all in-state electricity production</b> in North Dakota.</div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 In 2017, North Dakota's wind energy saved an estimated <b>2.6 billion gallons of water</b>. </div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 In 2017, North Dakota's wind energy saved an estimated <b>5.2 million metric tons of CO<sub>2</sub></b>. </div>
+                <hr style= "width:50%; border: 0 none;">
+              <div class="col-sm-4" style="width:100%; display:inline-block;"> &#9658 In 2017, North Dakota's wind energy saved an estimated <b>1.1 million cars’</b> worth of emissions. </div>
+                <hr style= "width:50%; border: 0 none;">
+                <div class="col-sm-4" style="width:100%; display:inline-block;">  <strong>Sources</strong>
+                        <br>
+                        <a href="http://awea.files.cms-plus.com/FileDownloads/pdfs/North%20Dakota.pdf">Wind Energy North Dakota, AWEA, 2017</a>
+                        <br>
+                        <a href="https://windexchange.energy.gov/maps-data/78">NREL and Wind Exchange, U.S. Department of Energy's Wind Energy Technologies Office</a>
+                        <br>
+                        <a href="https://github.com/danwild/wind-js">Wind JS Server, Service to visualize Grib2 wind forecast data as JSON</a>
+
+                </div>
+
+          </div>
+    </div>
+
+<script src="/main.js"></script>
+
+
+    
+</body>
+
+</html>
