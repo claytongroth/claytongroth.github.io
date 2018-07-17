@@ -73,7 +73,9 @@
     {
       "type": "Feature",
       "properties": {
-        "park": "Parking Area"
+        "park": "Parking Area",
+        "name": "Parking Area",
+        "des": "The prefered parking area for visiting climbers."
       },
       "geometry": {
         "coordinates": [
