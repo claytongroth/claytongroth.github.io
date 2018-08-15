@@ -109,6 +109,9 @@ body {
     background-color: #D3D3D3;
 }
 
+container-fluid{
+    padding-bottom: 10px;
+}
 
 .h5 {
     position: absolute
@@ -144,7 +147,7 @@ body {
 }
 /* footer */
 .footer {
-    
+    padding-top: 10px;
   background: #373D34;
   padding: 10px 0;
 }
