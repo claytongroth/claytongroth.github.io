@@ -1,1 +1,0 @@
-# NorthDakotaWind.github.io

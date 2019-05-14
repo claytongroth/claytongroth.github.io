@@ -1,1 +1,0 @@
-This Lib folder is for use if the links in index.html ghead become deprecated.

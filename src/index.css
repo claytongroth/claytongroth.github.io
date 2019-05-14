@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body,html{
+  height: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.navbar{
+  background-color: #28292f !important;
+}
+#myJumbo {
+   background: rgb(200, 54, 54); /* This is for ie8 and below */
+   background: rgba(249,174,92, .5);
+   max-height: 200px;
+   margin-bottom: 0;
+}
+/* LANDING PAGE */
+#landingJumbo{
+  background: rgb(200, 54, 54); /* This is for ie8 and below */
+  background: radial-gradient(
+      circle closest-side,
+      rgba(255,255,255, .7),
+      rgba(255,255,255, 0)
+  );
+
+  /*rgba(255,255,255, .25);*/
+
+  position: absolute;
+  top: 40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50px;
+}
+
+
+#landingButton{
+  background-color: rgba(10,10,10, .35);
+  color: rgba(40,41,47, 1);
+  position:absolute;
+  top: 65%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-family: "PT Mono", "Courier New", Courier, monospace;
+  transition-timing-function: ease-in;
+  border-width: 0 !important;
+}
+#landingButton:hover {
+  border: white !important;
+  border-style: solid !important;
+  border-width: 3px !important;
+}
+#landing{
+  color: #0a0a0a;
+  font-family: "PT Mono", "Courier New", Courier, monospace;
+  letter-spacing: 2px;
+}
+
+
+
+.name{
+  font-size: 80px;
+}
+.tag{
+  font-size: 30px;
+}
+
+header{
+  text-align:center;
+  padding-top: 10px;
+}
+header a{display:inline-block; width:60px;
+}
+
+/* MAIN PAGE*/
+.navbar-brand{
+  cursor: pointer !important;
+}
+
+
+
+/* My color scheme:
+#28292f  rgb(40,41,47)   dark grey
+#0a0a0a rgb(10,10,10)    black
+#ffffff  rgb(255,255,255)  white
+#f9ae5c   rgb(249,174,92)   tan
+#e4812f   rgb(228,129,47)  darker tan
+
+*/
+
+/* Media Queries*/
+@media only screen and (max-width: 600px) {
+  #landingJumbo{
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+    background: rgba(255,255,255, 0);
+    top: 15%;
+    left:50%;
+    transform: translate(-40%,-40%);
+  }
+  .name{
+    font-size: 50px;
+  }
+  .tag{
+    font-size: 20px;
+  }
+  #landingButton{
+    background-color: rgba(255,255,255, .5);
+    color:black;
+    top: 90%;
+    left:50%
+  }
+}
