@@ -19,7 +19,7 @@ class MyImage extends React.Component {
   handleImageErrored() {
     this.setState({
       imageStatus: "failed to load" ,
-      laoding: false
+      loading: false
   });
   }
 
@@ -29,10 +29,11 @@ class MyImage extends React.Component {
         { this.state.loading && <Spinner/> }
         <Image
           src={this.props.imageUrl}
+          style={{borderRadius: 20}}
           onLoad={this.handleImageLoaded.bind(this)}
           onError={this.handleImageErrored.bind(this)}
           fluid
-        />;
+        />
       </div>
     );
   }

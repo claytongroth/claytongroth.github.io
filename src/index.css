@@ -1,22 +1,52 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 body,html{
   height: 100%;
+  width: 100%;
+  font-family: 'PT Mono', monospace;
+/*  font-family: 'PT Mono', monospace; */
+
+}
+body {
+  padding-top: 70px;
+}
+div#preload {
+    display: none;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .navbar{
   background-color: #28292f !important;
 }
+.dropdown-menu {
+  background-color: rgba(40,41,47, .6);
+}
+.dropdown-item{
+  color: white;
+}
+
+#mybio{
+  text-align: left;
+  border-radius: 20px;
+  background: radial-gradient(
+      circle closest-side,
+      rgba(255,255,255, .9),
+      rgba(255,255,255, .7)
+  );
+}
+#innerpic {
+  margin-top: 10px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
 #myJumbo {
    background: rgb(200, 54, 54); /* This is for ie8 and below */
    background: rgba(249,174,92, .5);
@@ -49,7 +79,7 @@ code {
   top: 65%;
   left:50%;
   transform: translate(-50%,-50%);
-  font-family: "PT Mono", "Courier New", Courier, monospace;
+  font-family: 'PT Mono', monospace;
   transition-timing-function: ease-in;
   border-width: 0 !important;
 }
@@ -60,7 +90,7 @@ code {
 }
 #landing{
   color: #0a0a0a;
-  font-family: "PT Mono", "Courier New", Courier, monospace;
+  font-family: 'PT Mono', monospace;
   letter-spacing: 2px;
 }
 
@@ -101,20 +131,30 @@ header a{display:inline-block; width:60px;
   #landingJumbo{
     background: rgb(200, 54, 54); /* This is for ie8 and below */
     background: rgba(255,255,255, 0);
-    top: 15%;
-    left:50%;
-    transform: translate(-40%,-40%);
+    top: 20%;
+    left: 20%;
+    transform: translate(-10%,-40%);
   }
   .name{
-    font-size: 50px;
+    font-size: 40px;
   }
   .tag{
     font-size: 20px;
+  }
+  .img-fluid{
+    margin-top: 10px;
   }
   #landingButton{
     background-color: rgba(255,255,255, .5);
     color:black;
     top: 90%;
     left:50%
+  }
+  .socialMedia{
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+  br {
+    display: none;
   }
 }

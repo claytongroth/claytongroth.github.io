@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import {Helmet} from 'react-helmet';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import USMap from './usMapClimbing.js';
+import AboutMe from './components/aboutme.js';
 import './App.css';
 
 class MainPage extends React.Component {
@@ -21,46 +22,55 @@ class MainPage extends React.Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-            <NavDropdown title="Interactive Web Maps" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1"></NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown title="Portfolio" id="collasible-nav-dropdown">
+              {//<Link to={'/usclimbing'} className="dropdown-item"> U.S. Climbing </Link>
+              }
+              <NavDropdown.Item href="https://github.com/claytongroth/Nosh" target="_blank">Nosh: MERN stack app</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/claytongroth/Ambul8_Walkability" target="_blank">Ambul8: fullstack app with Flask</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/claytongroth/ValidationSummaryPage" target="_blank">Validation Summary Page: SP React App</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/claytongroth/React-Redux-Chess" target="_blank">React-Redux-Chess</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/claytongroth">See all my projects on GitHub!</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Interactive Web Maps" id="collasible-nav-dropdown">
+              <NavDropdown.Item href=""></NavDropdown.Item>
+              <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
+              <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
             </NavDropdown>
               <NavDropdown title="Maps" id="collasible-nav-dropdown">
-                <Link to={'/usclimbing'} className="dropdown-item"> U.S. Climbing </Link>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                {//<Link to={'/usclimbing'} className="dropdown-item"> More Coming Soon </Link>
+                }
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Projects" id="collasible-nav-dropdown">
-                <Link to={'/usclimbing'} className="dropdown-item"> U.S. Climbing </Link>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+
               <NavDropdown title="About Me" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="">More Coming Soon</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Contact Me</Nav.Link>
+              <Nav.Link href="https://www.linkedin.com/in/clayton-groth-156aaa115/">Contact Me</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 More
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        <AboutMe/>
+        { /*  until I get the router working properly
           <Switch>
+              <Route exact path='/' component={AboutMe} />
               <Route exact path='/usclimbing' component={USMap} />
           </Switch>
+        */ }
         </Router>
         </div>
     );
